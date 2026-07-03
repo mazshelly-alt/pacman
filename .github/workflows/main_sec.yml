@@ -17,11 +17,11 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Configure AWS credentials with GitHub OIDC
-      uses: aws-actions/configure-aws-credentials@v6
+      uses: aws-actions/configure-aws-credentials@v6.1.0
       with:
         aws-region: us-west-2
         role-to-assume: arn:aws:iam::605199373262:role/githubactions_role
-        role-session-name: github-actions-${{ github.run_id }}
+        role-session-name: githubactions_role-${{ github.run_id }}
 
 
     - name: Test AWS connection
