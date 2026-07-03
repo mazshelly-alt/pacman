@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: checkout code
-      use: actions/checkout@v4
+      uses: actions/checkout@v4
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v6.1.0
@@ -23,7 +23,7 @@ jobs:
       run: aws sts get-caller-identity
 
     - name: login to AWS ECR
-      use: aws-actions/amazon-ecr-login@v2
+      uses: aws-actions/amazon-ecr-login@v2
       
     - name: build, tag, push, docker image to ECR
       env:
